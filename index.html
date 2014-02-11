@@ -41,14 +41,14 @@ function init() {
 }
 
 function addObj(objects, map) {
-    var organizations = objects.data
-    organns = ymaps.geoQuery(ymaps.geocode(organizations[0]));
-    for (var i = 1; i < organizations.length; i++) {
-        organns = organns.add(ymaps.geocode(organizations[i]));
+    var objs = objects.data
+    orgs = ymaps.geoQuery(ymaps.geocode(objs[0]));
+    for (var i = 1; i < objs.length; i++) {
+        orgs = orgs.add(ymaps.geocode(objs[i]));
     }
 
-    organns.setOptions({ preset: 'twirl#' + objects.color + 'Icon' });
-    organns.addToMap(map);
+    orgs.setOptions({ preset: 'twirl#' + objects.color + 'Icon' });
+    orgs.addToMap(map);
 }
 
 ymaps.ready(init);
